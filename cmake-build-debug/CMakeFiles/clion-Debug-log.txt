@@ -1,0 +1,5 @@
+"C:\Program Files (x86)\JetBrains\CLion 2024.1.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files (x86)/JetBrains/CLion 2024.1.2/bin/ninja/win/x64/ninja.exe" -G Ninja -S C:\Users\prong\Documents\SAE\LED_Blink_Ceedling -B C:\Users\prong\Documents\SAE\LED_Blink_Ceedling\cmake-build-debug
+Build type: Debug
+-- Configuring done (1.5s)
+-- Generating done (0.1s)
+-- Build files have been written to: C:/Users/prong/Documents/SAE/LED_Blink_Ceedling/cmake-build-debug
