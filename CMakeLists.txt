@@ -65,12 +65,29 @@ target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE
 target_link_libraries(${CMAKE_PROJECT_NAME}
     stm32cubemx
 
-    # Add user defined libraries
+# Add user defined libraries
 
-#add_custom_target(run_tests
-#        COMMAND ceedling test:all
-##        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-#        COMMENT "Running Ceedling tests"
-#)
+# Ceedling support
+find_program(CEEDLING_EXECUTABLE ceedling REQUIRED)
 
+# Add a custom target for Ceedling
+add_custom_target(ceedling_tests
+    COMMAND ${CEEDLING_EXECUTABLE} test:all
+    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+    COMMENT "Running Ceedling tests"
+)
+
+# Add a custom target to clean Ceedling files
+add_custom_target(ceedling_clean
+    COMMAND ${CEEDLING_EXECUTABLE} clean
+    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+    COMMENT "Cleaning Ceedling files"
+)
+
+# Add a custom target to generate a coverage report with Ceedling
+add_custom_target(ceedling_coverage
+    COMMAND ${CEEDLING_EXECUTABLE} gcov:all
+    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+    COMMENT "Generating Ceedling coverage report"
+)
 )
