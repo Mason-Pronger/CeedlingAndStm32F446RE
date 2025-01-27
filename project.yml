@@ -103,6 +103,10 @@
     - Core/Src/**
   :include:
     - Core/Inc/** # In simple projects, this entry often duplicates :source
+    - Drivers/STM32F4xx_HAL_Driver/Inc/**
+    - Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/**
+    - Drivers/CMSIS/Device/ST/STM32F4xx/Include/**
+    - Drivers/CMSIS/Include/**
   :support:
     - test/support
   :libraries: []
@@ -122,7 +126,7 @@
 :defines:
   :test:
     - TEST # Simple list option to add symbol 'TEST' to compilation of all files in all test executables
-    - STM32F446XX # Simple list option to add symbol 'STM32F446XX' to compilation of all files in all test executables
+    - STM32F446xx # Simple list option to add symbol 'STM32F446XX' to compilation of all files in all test executables
   :release: []
 
   # Enable to inject name of a test as a unique compilation symbol into its respective executable build. 

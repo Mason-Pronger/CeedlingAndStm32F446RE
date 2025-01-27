@@ -2,11 +2,13 @@
 
 /*=======Automagically Detected Files To Include=====*/
 #include "unity.h"
+#include "cmock.h"
 /* injected defines for unity settings, etc */
 #ifndef UNITY_EXCLUDE_FLOAT
 #define UNITY_EXCLUDE_FLOAT
 #endif /* UNITY_EXCLUDE_FLOAT */
 #include "LED.h"
+#include "mock_stm32f4xx_hal_gpio.h"
 
 int GlobalExpectCount;
 int GlobalVerifyOrder;
@@ -24,12 +26,15 @@ static void CMock_Init(void)
   GlobalExpectCount = 0;
   GlobalVerifyOrder = 0;
   GlobalOrderError = NULL;
+  mock_stm32f4xx_hal_gpio_Init();
 }
 static void CMock_Verify(void)
 {
+  mock_stm32f4xx_hal_gpio_Verify();
 }
 static void CMock_Destroy(void)
 {
+  mock_stm32f4xx_hal_gpio_Destroy();
 }
 
 /*=======Test Reset Options=====*/
@@ -95,7 +100,8 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
   }
 #endif
   UnityBegin("test_LED.c");
-  run_test(test_LED_NeedToImplement, "test_LED_NeedToImplement", 16);
+  run_test(test_LED_NeedToImplement, "test_LED_NeedToImplement", 17);
 
+  CMock_Guts_MemFreeFinal();
   return UNITY_END();
 }
