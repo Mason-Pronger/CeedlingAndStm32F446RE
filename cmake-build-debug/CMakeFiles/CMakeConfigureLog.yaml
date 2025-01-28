@@ -5,7 +5,7 @@ events:
     kind: "message-v1"
     backtrace:
       - "/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineSystem.cmake:200 (message)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:32 (project)"
     message: |
       The target system is: Generic -  - arm
       The host system is: Linux - 6.8.0-51-generic - x86_64
@@ -15,7 +15,7 @@ events:
       - "/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
       - "/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:32 (project)"
     message: |
       Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
       Compiler: /usr/bin/arm-none-eabi-gcc 
@@ -45,7 +45,7 @@ events:
       - "/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
       - "/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:32 (project)"
     message: |
       Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
       Compiler: /usr/bin/arm-none-eabi-gcc 
@@ -64,23 +64,10 @@ events:
   -
     kind: "message-v1"
     backtrace:
-      - "/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:1192 (message)"
-      - "/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
-      - "CMakeLists.txt:31 (enable_language)"
-    message: |
-      Checking whether the ASM compiler is GNU using "--version" matched "(GNU assembler)|(GCC)|(Free Software Foundation)":
-      arm-none-eabi-gcc (15:13.2.rel1-2) 13.2.1 20231009
-      Copyright (C) 2023 Free Software Foundation, Inc.
-      This is free software; see the source for copying conditions.  There is NO
-      warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-      
-  -
-    kind: "message-v1"
-    backtrace:
       - "/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
       - "/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:34 (project)"
+      - "CMakeLists.txt:32 (project)"
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
       Compiler: /usr/bin/arm-none-eabi-g++ 
@@ -110,7 +97,7 @@ events:
       - "/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
       - "/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:34 (project)"
+      - "CMakeLists.txt:32 (project)"
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
       Compiler: /usr/bin/arm-none-eabi-g++ 
@@ -125,5 +112,18 @@ events:
       
       The CXX compiler identification is GNU, found in:
         /home/mason/UMSAE/CeedlingAndStm32F446RE/cmake-build-debug/CMakeFiles/3.30.5/CompilerIdCXX/CMakeCXXCompilerId.o
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:1192 (message)"
+      - "/snap/clion/314/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "CMakeLists.txt:36 (enable_language)"
+    message: |
+      Checking whether the ASM compiler is GNU using "--version" matched "(GNU assembler)|(GCC)|(Free Software Foundation)":
+      arm-none-eabi-gcc (15:13.2.rel1-2) 13.2.1 20231009
+      Copyright (C) 2023 Free Software Foundation, Inc.
+      This is free software; see the source for copying conditions.  There is NO
+      warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
       
 ...

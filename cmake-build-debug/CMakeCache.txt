@@ -15,6 +15,9 @@
 ########################
 
 //Path to a program.
+CEEDLING_EXECUTABLE:FILEPATH=/usr/local/bin/ceedling
+
+//Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=/usr/bin/arm-none-eabi-addr2line
 
 //Path to a program.

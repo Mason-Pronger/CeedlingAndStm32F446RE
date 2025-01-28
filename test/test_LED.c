@@ -22,7 +22,11 @@ void test_LED_NeedToImplement(void)
 	HAL_GPIO_TogglePin_CMockExpect(__LINE__, GPIOA, GPIO_PIN_5);
     LED_TOGGLE();
 
-    TEST_PASS();
+    //TEST_PASS();
+
+
+    TEST_ASSERT_EQUAL_INT(1, light);
+    TEST_ASSERT_TRUE(light);
 
 }
 

@@ -73,6 +73,7 @@ preinstall: cmake/stm32cubemx/preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/LED_Blink_Ceedling.dir/clean
+clean: CMakeFiles/run_tests.dir/clean
 clean: cmake/stm32cubemx/clean
 .PHONY : clean
 
@@ -116,6 +117,32 @@ LED_Blink_Ceedling: CMakeFiles/LED_Blink_Ceedling.dir/rule
 CMakeFiles/LED_Blink_Ceedling.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/LED_Blink_Ceedling.dir/build.make CMakeFiles/LED_Blink_Ceedling.dir/clean
 .PHONY : CMakeFiles/LED_Blink_Ceedling.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/run_tests.dir
+
+# All Build rule for target.
+CMakeFiles/run_tests.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/mason/UMSAE/CeedlingAndStm32F446RE/cmake-build-debug/CMakeFiles --progress-num=24 "Built target run_tests"
+.PHONY : CMakeFiles/run_tests.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/run_tests.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mason/UMSAE/CeedlingAndStm32F446RE/cmake-build-debug/CMakeFiles 1
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/run_tests.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mason/UMSAE/CeedlingAndStm32F446RE/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/run_tests.dir/rule
+
+# Convenience name for target.
+run_tests: CMakeFiles/run_tests.dir/rule
+.PHONY : run_tests
+
+# clean rule for target.
+CMakeFiles/run_tests.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/clean
+.PHONY : CMakeFiles/run_tests.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

@@ -129,6 +129,19 @@ LED_Blink_Ceedling/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/LED_Blink_Ceedling.dir/build.make CMakeFiles/LED_Blink_Ceedling.dir/build
 .PHONY : LED_Blink_Ceedling/fast
 
+#=============================================================================
+# Target rules for targets named run_tests
+
+# Build rule for target.
+run_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 run_tests
+.PHONY : run_tests
+
+# fast build rule for target.
+run_tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/build
+.PHONY : run_tests/fast
+
 Core/Src/LED.obj: Core/Src/LED.c.obj
 .PHONY : Core/Src/LED.obj
 
@@ -649,6 +662,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... run_tests"
 	@echo "... LED_Blink_Ceedling"
 	@echo "... Core/Src/LED.obj"
 	@echo "... Core/Src/LED.i"

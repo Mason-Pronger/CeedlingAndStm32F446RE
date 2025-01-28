@@ -15,7 +15,8 @@ set(CMAKE_C_EXTENSIONS ON)
 
 # Define the build type
 if(NOT CMAKE_BUILD_TYPE)
-    set(CMAKE_BUILD_TYPE "Debug")
+    set(CMAKE_BUILD_TYPE "Debug" CACHE STRING "Choose the type of build." FORCE)
+    set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS "Debug" "Release" "Test")
 endif()
 
 # Set the project name
@@ -27,12 +28,12 @@ include("cmake/gcc-arm-none-eabi.cmake")
 # Enable compile command to ease indexing with e.g. clangd
 set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
 
-# Enable CMake support for ASM and C languages
-enable_language(C ASM)
-
 # Core project settings
 project(${CMAKE_PROJECT_NAME})
 message("Build type: " ${CMAKE_BUILD_TYPE})
+
+# Enable CMake support for ASM and C languages
+enable_language(C ASM)
 
 # Create an executable object type
 add_executable(${CMAKE_PROJECT_NAME}
@@ -64,30 +65,17 @@ target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE
 # Add linked libraries
 target_link_libraries(${CMAKE_PROJECT_NAME}
     stm32cubemx
-
+)
 # Add user defined libraries
 
 # Ceedling support
 find_program(CEEDLING_EXECUTABLE ceedling REQUIRED)
 
-# Add a custom target for Ceedling
-add_custom_target(ceedling_tests
-    COMMAND ${CEEDLING_EXECUTABLE} test:all
-    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-    COMMENT "Running Ceedling tests"
+# Custom build type for running Ceedling tests
+add_custom_target(run_tests
+COMMAND ${CEEDLING_EXECUTABLE} test:all
+WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+COMMENT "Running Ceedling tests"
 )
 
-# Add a custom target to clean Ceedling files
-add_custom_target(ceedling_clean
-    COMMAND ${CEEDLING_EXECUTABLE} clean
-    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-    COMMENT "Cleaning Ceedling files"
-)
 
-# Add a custom target to generate a coverage report with Ceedling
-add_custom_target(ceedling_coverage
-    COMMAND ${CEEDLING_EXECUTABLE} gcov:all
-    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-    COMMENT "Generating Ceedling coverage report"
-)
-)
